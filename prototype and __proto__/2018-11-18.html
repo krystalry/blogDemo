@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS原型与原型链学习笔记（一）</title>
+</head>
+<body>
+
+</body>
+<script>
+
+    //(1) 定义
+    //    function f() {}
+    //    console.log(typeof f.prototype);
+
+    function Person(name) {
+        this.name = name;
+    }
+    Person.prototype.sex = 'male';
+
+    var Jack = new Person('Jack');
+    var Rose = new Person('Rose');
+
+    //    console.log(Jack.sex);
+    //    console.log(Jack.name);
+    console.log(Jack);
+    console.log(Person.prototype);
+
+    //    console.log(Rose.sex);
+    //    console.log(Rose.name);
+    console.log(Rose)
+</script>
+</html>
