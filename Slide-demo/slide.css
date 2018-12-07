@@ -9,6 +9,14 @@
 }
 
 .window {
-    width: 300px;
+    width: 400px;
     overflow: hidden;
+}
+
+.red{
+    color: red;
+}
+
+#buttons {
+    cursor: pointer;
 }
