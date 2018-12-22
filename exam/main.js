@@ -1,11 +1,21 @@
-clickMe.addEventListener('click', function (e) {
-    popover.style.display = 'block'
+var one = document.getElementsByClassName('wrapper')[0];
+var two = document.getElementsByClassName('popoverHide')[0];
+one.addEventListener('click', function (e) {
+    if ((e.target !== two) && (!two.contains(e.target))) {
+        if (two.style.display == 'block') {
+            two.style.display = 'none'
+        } else {
+            two.style.display = 'block';
+            listenToDocument()
+        }
+    }
 });
 
-wrapper.addEventListener('click', function (e) {
-    e.stopPropagation()
-});
-
-document.addEventListener('click', function () {
-    popover.style.display = 'none'
-});
+function listenToDocument() {
+    document.addEventListener('click', function (e) {
+        if (e.target === document.documentElement) {
+            two.style.display = 'none';
+            document.removeEventListener('click', arguments.callee)
+        }
+    })
+}
